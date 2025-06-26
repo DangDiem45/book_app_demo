@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: book_app_demo/book_app
+        working-directory: book_app
 
     steps:
       - uses: actions/checkout@v3
