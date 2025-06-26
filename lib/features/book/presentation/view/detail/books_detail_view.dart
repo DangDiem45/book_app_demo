@@ -20,10 +20,9 @@ class _BooksDetailViewState extends State<BooksDetailView> {
     super.initState();
     BlocProvider.of<SimilarBooksBloc>(context).add(
       FetchSimilarBooksEvent(
-        categories:
-            widget.bookItems.volumeInfo?.categories?.isNotEmpty ?? false
-                ? widget.bookItems.volumeInfo!.categories!.first
-                : 'computer',
+        categories: widget.bookItems.volumeInfo?.categories?.isNotEmpty ?? false
+            ? widget.bookItems.volumeInfo!.categories!.first
+            : 'computer',
       ),
     );
   }
@@ -41,7 +40,7 @@ class _BooksDetailViewState extends State<BooksDetailView> {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: const Color(0xFFE0E0E0),
+            color: Color(0xFFE0E0E0),
           ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,

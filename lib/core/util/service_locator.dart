@@ -8,7 +8,6 @@ import 'package:book_app/features/book/domain/usecases/fetch_feature_book.dart';
 import 'package:book_app/features/book/domain/usecases/fetch_newest_book.dart';
 import 'package:book_app/features/book/domain/usecases/fetch_similar_book.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -35,7 +34,6 @@ class BookCacheService {
 }
 
 void setUpServiceLocator() {
-  // getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<Dio>(Dio());
   getIt.registerSingleton<BooksApiService>(BooksApiService(getIt.get<Dio>()));
   getIt.registerSingleton<BookRepository>(
