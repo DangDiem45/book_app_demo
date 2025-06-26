@@ -33,7 +33,7 @@ class BookCacheService {
   }
 }
 
-void setUpServiceLocator() {
+Future<void> setUpServiceLocator() async {
   getIt.registerSingleton<Dio>(Dio());
   getIt.registerSingleton<BooksApiService>(BooksApiService(getIt.get<Dio>()));
   getIt.registerSingleton<BookRepository>(
