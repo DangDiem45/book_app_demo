@@ -70,7 +70,7 @@ class HomeViewBody extends StatelessWidget {
                           );
                         } else if (state is NewestBooksFailure) {
                           return Text(
-                            state.errMessage,
+                            state.error,
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,

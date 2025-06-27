@@ -1,13 +1,16 @@
 import 'package:dio/dio.dart';
+import 'package:equatable/equatable.dart';
 
-abstract class Failure {
+abstract class Failure extends Equatable {
   final String errMessage;
 
-  Failure(this.errMessage);
+  const Failure(this.errMessage);
+  @override
+  List<Object?> get props => [errMessage];
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(super.errMessage);
+  const ServerFailure(super.errMessage);
 
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {

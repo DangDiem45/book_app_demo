@@ -83,7 +83,7 @@ class FeaturedBooksListView extends StatelessWidget {
             },
           );
         } else if (state is FeaturedBooksFailure) {
-          return Text(state.errMessage);
+          return Text(state.error);
         }
         return const SizedBox.shrink();
       },

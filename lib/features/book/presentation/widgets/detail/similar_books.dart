@@ -91,7 +91,7 @@ class SimilarBooks extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    state.errMessage,
+                    state.error,
                     style: TextStyle(
                       fontSize: 14,
                       color: Color(0xFF909090),

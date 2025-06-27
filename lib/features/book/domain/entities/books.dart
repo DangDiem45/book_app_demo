@@ -1,20 +1,28 @@
-class BookEntity {
+import 'package:equatable/equatable.dart';
+
+class BookEntity extends Equatable {
   final String? kind;
   final num? totalItems;
   final List<BookItemsEntity>? items;
 
-  BookEntity({this.kind, this.totalItems, this.items});
+  const BookEntity({this.kind, this.totalItems, this.items});
+
+  @override
+  List<Object?> get props => [kind, totalItems, items];
 }
 
-class BookItemsEntity {
+class BookItemsEntity extends Equatable {
   final String? id;
   final VolumeInfoEntity? volumeInfo;
   final SaleInfoEntity? saleInfo;
 
-  BookItemsEntity({this.id, this.volumeInfo, this.saleInfo});
+  const BookItemsEntity({this.id, this.volumeInfo, this.saleInfo});
+
+  @override
+  List<Object?> get props => [id, volumeInfo, saleInfo];
 }
 
-class VolumeInfoEntity {
+class VolumeInfoEntity extends Equatable {
   final String? title;
   final List<String>? authors;
   final String? publisher;
@@ -26,7 +34,7 @@ class VolumeInfoEntity {
   final ImageLinksEntity? imageLinks;
   final List<String>? categories;
 
-  VolumeInfoEntity({
+  const VolumeInfoEntity({
     this.title,
     this.authors,
     this.publisher,
@@ -38,15 +46,32 @@ class VolumeInfoEntity {
     this.imageLinks,
     this.categories,
   });
+
+  @override
+  List<Object?> get props => [
+    title,
+    authors,
+    publisher,
+    publishedDate,
+    description,
+    pageCount,
+    averageRating,
+    ratingsCount,
+    imageLinks,
+    categories,
+  ];
 }
 
-class ImageLinksEntity {
+class ImageLinksEntity extends Equatable {
   final String? thumbnail;
 
-  ImageLinksEntity({this.thumbnail});
+  const ImageLinksEntity({this.thumbnail});
+
+  @override
+  List<Object?> get props => [thumbnail];
 }
 
-class SaleInfoEntity {
+class SaleInfoEntity extends Equatable {
   final String? country;
   final String? saleability;
   final bool? isEbook;
@@ -54,7 +79,7 @@ class SaleInfoEntity {
   final ListPriceEntity? retailPrice;
   final String? buyLink;
 
-  SaleInfoEntity({
+  const SaleInfoEntity({
     this.country,
     this.saleability,
     this.isEbook,
@@ -62,11 +87,24 @@ class SaleInfoEntity {
     this.retailPrice,
     this.buyLink,
   });
+
+  @override
+  List<Object?> get props => [
+    country,
+    saleability,
+    isEbook,
+    listPrice,
+    retailPrice,
+    buyLink,
+  ];
 }
 
-class ListPriceEntity {
+class ListPriceEntity extends Equatable {
   final num? amount;
   final String? currencyCode;
 
-  ListPriceEntity({this.amount, this.currencyCode});
+  const ListPriceEntity({this.amount, this.currencyCode});
+
+  @override
+  List<Object?> get props => [amount, currencyCode];
 }
