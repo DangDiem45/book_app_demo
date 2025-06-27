@@ -81,8 +81,10 @@ class BestSellerListViewItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        bookItems.saleInfo!.listPrice?.amount != null
-                            ? '${bookItems.saleInfo!.listPrice?.amount} ${bookItems.saleInfo!.listPrice?.currencyCode}'
+                        (bookItems.saleInfo?.listPrice?.amount != null &&
+                                bookItems.saleInfo?.listPrice?.currencyCode !=
+                                    null)
+                            ? '${bookItems.saleInfo?.listPrice?.amount} ${bookItems.saleInfo?.listPrice?.currencyCode}'
                             : 'Free',
                         style: TextStyle(
                           fontSize: fontSize - 2,
